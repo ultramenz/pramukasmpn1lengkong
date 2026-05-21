@@ -76,23 +76,23 @@ if (!adminCheck) {
 // Seed Settings if not exists
 const schoolNameCheck = db.prepare("SELECT * FROM settings WHERE key = 'school_name'").get();
 if (!schoolNameCheck) {
-  db.prepare("INSERT INTO settings (key, value) VALUES (?, ?)").run('school_name', 'SD Harapan Bangsa');
+  db.prepare("INSERT INTO settings (key, value) VALUES (?, ?)").run('school_name', 'PRALESAT.');
 }
 const heroImageCheck = db.prepare("SELECT * FROM settings WHERE key = 'hero_image'").get();
 if (!heroImageCheck) {
-  db.prepare("INSERT INTO settings (key, value) VALUES (?, ?)").run('hero_image', 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  db.prepare("INSERT INTO settings (key, value) VALUES (?, ?)").run('hero_image', 'https://4.bp.blogspot.com/-IHFvqHLWCeQ/W123xpLgW9I/AAAAAAAAAD8/sn2ZuZ0u0OQfV-WQgevT_fHL7qWm1WkyACLcBGAs/s1600/pramuka1.jpg');
 }
 const visiCheck = db.prepare("SELECT * FROM settings WHERE key = 'visi'").get();
 if (!visiCheck) {
-  db.prepare("INSERT INTO settings (key, value) VALUES (?, ?)").run('visi', 'Terwujudnya peserta didik yang beriman, cerdas, terampil, mandiri, dan berwawasan global.');
+  db.prepare("INSERT INTO settings (key, value) VALUES (?, ?)").run('visi', 'PUNYA ALIP.');
 }
 const misiCheck = db.prepare("SELECT * FROM settings WHERE key = 'misi'").get();
 if (!misiCheck) {
   db.prepare("INSERT INTO settings (key, value) VALUES (?, ?)").run('misi', JSON.stringify([
-    'Melaksanakan pembelajaran yang aktif, kreatif, dan menyenangkan.',
-    'Menanamkan nilai-nilai keimanan dan ketaqwaan.',
-    'Mengembangkan bakat dan minat siswa melalui ekstrakurikuler.',
-    'Mewujudkan lingkungan sekolah yang bersih dan asri.'
+    'LALA IMOET',
+    'LALA GEMOY',
+    'LALA CEBOL',
+    'LALA UCYUU.'
   ]));
 }
 const registrationLinkCheck = db.prepare("SELECT * FROM settings WHERE key = 'registration_link'").get();
@@ -132,33 +132,32 @@ if (!socialLinkedinCheck) {
 const statsCheck = db.prepare('SELECT count(*) as count FROM stats').get() as { count: number };
 if (statsCheck.count === 0) {
   const insertStat = db.prepare('INSERT INTO stats (label, value, icon) VALUES (?, ?, ?)');
-  insertStat.run('Siswa', '450+', '🎓');
-  insertStat.run('Guru', '32', '👩‍🏫');
-  insertStat.run('Kelas', '18', '🏫');
-  insertStat.run('Prestasi', '120+', '🏆');
+  insertStat.run('ANGGOTA', '999+', '🎓');
+  insertStat.run('PEMBINA', '999', '👩‍🏫');
+  insertStat.run('ALIP GEMOY', '1', '🏆');
 }
 
 const teacherCheck = db.prepare('SELECT count(*) as count FROM teachers').get() as { count: number };
 if (teacherCheck.count === 0) {
   const insertTeacher = db.prepare('INSERT INTO teachers (name, position, photoUrl) VALUES (?, ?, ?)');
-  insertTeacher.run('Budi Santoso', 'Kepala Sekolah', '/uploads/placeholder-teacher.svg');
-  insertTeacher.run('Siti Aminah', 'Guru Matematika', '/uploads/placeholder-teacher.svg');
-  insertTeacher.run('Ahmad Rizki', 'Guru Olahraga', '/uploads/placeholder-teacher.svg');
+  insertTeacher.run('CAK ALIP', 'Kepala Sekolah', '/uploads/placeholder-teacher.svg');
+  insertTeacher.run('CAK COK', 'PEMBINA', '/uploads/placeholder-teacher.svg');
+  insertTeacher.run('ASU', 'JEMBYUT', '/uploads/placeholder-teacher.svg');
 }
 
 const articleCheck = db.prepare('SELECT count(*) as count FROM articles').get() as { count: number };
 if (articleCheck.count === 0) {
   const insertArticle = db.prepare('INSERT INTO articles (title, content, imageUrl, date, author) VALUES (?, ?, ?, ?, ?)');
   insertArticle.run(
-    'Penerimaan Siswa Baru 2024',
-    'SD Harapan Bangsa membuka pendaftaran siswa baru untuk tahun ajaran 2024/2025. Segera daftarkan putra-putri Anda!',
+    'Penerimaan Aggota Baru',
+    'COK KABEH!',
     '/uploads/placeholder-news.svg',
     new Date().toISOString().split('T')[0],
     'Admin'
   );
   insertArticle.run(
-    'Juara 1 Lomba Cerdas Cermat',
-    'Selamat kepada tim cerdas cermat SD Harapan Bangsa yang telah meraih juara 1 tingkat kecamatan.',
+    'JUARA 1 TER GEMOY',
+    'CAK ALIP.',
     '/uploads/placeholder-news.svg',
     new Date().toISOString().split('T')[0],
     'Admin'
