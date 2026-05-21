@@ -30,7 +30,7 @@ const createPlaceholder = (name: string, text: string, color: string) => {
 };
 
 createPlaceholder('placeholder-teacher.svg', 'Teacher Photo', '#2563eb'); // Blue-600
-createPlaceholder('placeholder-news.svg', 'News Image', '#1d4ed8'); // Blue-700
+createPlaceholder('placeholder-news.svg', 'News Image', '#f6970d'); // Blue-700
 
 
 // Database Setup
